@@ -12,16 +12,16 @@ while True:
         username = input("Enter Username/Email: ")
         password = input("Enter password: ")
         otp = input("Enter OTP: ")
-        print("Thank you")
+        print("Thank you!")
         gotomainpage()
 
     elif choice == '2':
         username = input("Enter Username/Email: ")
         password = input("Enter password: ")
-        print("Thank you")
+        print("Thank you!")
         gotomainpage()
 
-    elif choice == '3' or choice.lower() == 'exit':
+    elif choice == '3' or choice.lower() == "exit":
         break
 
 
