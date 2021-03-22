@@ -1,7 +1,6 @@
-def gotomainpage():
-    print("You are now on the mainpage")
+dictionary_username_password = {}
 while True:
-    print('''               ***SWEEP***         
+    print('''                   ***SWEEP***         
     1. Create Account
     2. Login
     3. Exit''')
@@ -12,17 +11,29 @@ while True:
         username = input("Enter Username/Email: ")
         password = input("Enter password: ")
         otp = input("Enter OTP: ")
-        print("Thank you!")
-        gotomainpage()
+        dictionary_username_password.update({username:password})
+        print("You're registered! please select login on the next screen and enter your credentials")
 
     elif choice == '2':
         username = input("Enter Username/Email: ")
-        password = input("Enter password: ")
-        print("Thank you!")
-        gotomainpage()
+        
+        if username in dictionary_username_password.keys():
+            password = input("Enter password: ")
+            if password == dictionary_username_password[username]:
+                print("Welcome!")
+                break 
 
+            else: 
+                print("Wrong password!")
+                break 
+        else:
+            print("Please create an account")
+            break         
     elif choice == '3' or choice.lower() == "exit":
         break
+        
+
+
 
 
 
