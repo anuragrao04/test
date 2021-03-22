@@ -1,4 +1,13 @@
 dictionary_username_password = {}  #dictionary definition 
+def go_to_mainpage():
+    print('''                   ***SWEEP***                 
+                        ***SELECT SERVICE***
+    1. hair dressing
+    2. bathroom cleaning 
+    3. house cleaning 
+    4. fan cleaning 
+    5. idk whatever \U0001F602''')   
+    choice = input()
 while True: #infinite loop 
     print('''                   ***SWEEP***                     
     1. Create Account
@@ -12,7 +21,8 @@ while True: #infinite loop
         password = input("Enter password: ")
         otp = input("Enter OTP: ")
         dictionary_username_password.update({username:password})     #to add username and password to the dictionary, add a print statement if you want to verify
-        print("You're registered! please select login on the next screen and enter your credentials")
+        print("Welcome! login using the login option on the next page")
+
 
     elif choice == '2':                 #login 
         username = input("Enter Username/Email: ")
@@ -21,6 +31,7 @@ while True: #infinite loop
             password = input("Enter password: ")
             if password == dictionary_username_password[username]:     #checking if the password matches the username 
                 print("Welcome!")
+                go_to_mainpage()
                 break 
 
             else: 
